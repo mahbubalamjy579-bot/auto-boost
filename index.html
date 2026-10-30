@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    
+    <title>Facebook Like Booster</title>
+    <meta name="keywords" content="Facebook like booster, FB page like generator, automatic facebook likes, professional social media tool" /> 
+
+    <meta name="description" content="Get real Facebook post and page likes fast with Facebook Like Booster — a simple and safe online tool to boost your social media engagement instantly." />
+    
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" type="image/svg+xml" />
+    
+    <meta name="google-site-verification" content="ZdDR1RNZvUThZX2Uj9aCh8YSfE_lDymQSJpps-eCtrE" />
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            background: #f0f2f5; /* Facebook light grey background */
+            color: #333333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
+        a { text-decoration: none; color: #1877f2; transition: color 0.3s; }
+        a:hover { color: #165fe5; }
+
+        :root {
+            --primary-text: #1c1c1c;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --accent-primary-fb: #1877f2; /* Facebook Blue */
+            --accent-light-fb: #42b72a; /* Facebook Green accent */
+            --button-gradient: linear-gradient(90deg, #1877f2, #36a420);
+            --shadow-color: rgba(24, 119, 242, 0.4);
+            --dark-button-bg: #1877f2; 
+        }
+
+        .header { 
+            width: 100%; 
+            height: 80px;
+            background-color: var(--card-bg); 
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 5%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        
+        .header a:hover,
+        .header a:focus { 
+            color: var(--primary-text);
+        }
+        
+        .logo-text { 
+            font-size: 22px; 
+            font-weight: 700; 
+            color: var(--accent-primary-fb); 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .intro-note-block {
+            margin-bottom: 25px;
+            padding: 20px 30px;
+            text-align: center;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #1877f2, #2d88ff); 
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .intro-note-block h3 {
+            font-size: 24px; 
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: white;
+        }
+        .intro-note-block p {
+            font-size: 14px; 
+            color: #f0f2f5;
+            margin: 0;
+        }
+
+        .wrapper {
+            max-width: 700px;
+            width: 90%;
+            margin: 40px auto;
+            flex-grow: 1; 
+        }
+        
+        .content-block {
+            background: var(--card-bg);
+            margin-bottom: 25px;
+            border-radius: 16px; 
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+        .content-block:hover {
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+        }
+        .content-block h2 {
+            font-size: 22px; 
+            color: var(--accent-primary-fb); 
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        .content-block p {
+            font-size: 14px; 
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .content-block p a { 
+            color: var(--accent-primary-fb);
+            font-weight: 600;
+            pointer-events: auto; 
+            -webkit-user-select: auto;
+            user-select: auto;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+            transition: border-color 0.3s, box-shadow 0.3s; 
+            -webkit-user-select: auto;
+            user-select: auto;
+        }
+        .input-field:focus {
+            border-color: var(--accent-primary-fb);
+            box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.15);
+            outline: none;
+        }
+        
+        .custom-select-wrapper {
+            position: relative;
+        }
+        
+        .custom-select-trigger {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .custom-select-trigger:hover {
+            border-color: #ccc;
+        }
+
+        .custom-select-wrapper.open .custom-select-trigger {
+            border-color: var(--accent-primary-fb);
+            box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.15);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .custom-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-primary-fb);
+            border-top: none;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .custom-select-wrapper.open .custom-options {
+            display: block;
+        }
+
+        .custom-option {
+            padding: 10px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+            color: var(--primary-text);
+        }
+        .custom-option:hover {
+            background-color: #f0f2f5;
+        }
+
+        .custom-option.selected {
+            background-color: var(--accent-primary-fb);
+            color: white;
+            font-weight: 600;
+        }
+
+        .dropdown-arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #666;
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+        .custom-select-wrapper.open .dropdown-arrow {
+            transform: rotate(180deg);
+            border-top-color: var(--accent-primary-fb);
+        }
+
+        .primary-button {
+            width: 100%;
+            height: 48px;
+            border: none; 
+            background: var(--dark-button-bg); 
+            color: white; 
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(24, 119, 242, 0.3); 
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .primary-button:hover {
+            transform: translateY(-2px);
+            background-color: #166fe5; 
+            box-shadow: 0 6px 15px rgba(24, 119, 242, 0.4); 
+        }
+        .primary-button:disabled {
+            background-color: #1877f2; 
+            cursor: default;
+            transform: none;
+            opacity: 0.8; 
+            pointer-events: none;
+        }
+        
+        .primary-button .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid #ffffff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.8s linear infinite;
+            display: none;
+            margin-right: 8px;
+        }
+
+        .primary-button.loading .spinner {
+            display: block;
+        }
+
+        .primary-button.loading .button-text {
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .bot-status h2 {
+            font-size: 18px;
+            color: var(--primary-text);
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+        
+        .stat-container {
+            border: 1px solid #e0e0e0; 
+            border-radius: 12px;
+            padding: 20px;
+            background: var(--card-bg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        .data-card-grid {
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            gap: 5px;
+            background-color: var(--light-bg);
+        }
+        .data-card-grid div {
+            flex: 1;
+            padding: 5px;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .data-card-grid div:last-child {
+            border-right: none;
+        }
+        .data-card-grid strong {
+            display: block;
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .data-card-grid span {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-primary-fb);
+        }
+
+        .chart-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .chart-label {
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .chart-bar-area {
+            flex-grow: 1;
+            height: 12px;
+            background-color: #eee;
+            border-radius: 8px;
+            margin: 0 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1877f2, #42b72a); 
+            transition: width 0.4s ease-in-out; 
+            border-radius: 8px;
+        }
+        
+        .chart-percentage {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .chart-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-primary-fb);
+            width: 50px;
+            text-align: right;
+        }
+
+        .status-line-scanner {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #42b72a, transparent);
+            margin: 15px 0 8px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 8px #42b72a;
+        }
+        .scan-line {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.5);
+            animation: scan-animation 3s infinite linear;
+        }
+        @keyframes scan-animation {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+        
+        .completion-status-box {
+            background: linear-gradient(145deg, #1877f2 0%, #36a420 100%); 
+            border: 2px solid white; 
+            border-radius: 16px; 
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+            animation: fadeIn 0.5s ease-out; 
+        }
+        
+        .success-circle {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            padding: 3px;
+            background: white; 
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .success-circle-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #42b72a;
+            z-index: 2;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .success-circle-inner:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            border: solid white;
+            border-width: 0 4px 4px 0;
+            transform: translateY(-2px) rotate(45deg) scale(1); 
+        }
+
+        .completion-status-box .separator {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+            margin: 15px 0;
+        }
+
+        .completion-status-box h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 5px;
+            font-weight: 800; 
+        }
+        .completion-status-box p {
+            font-size: 16px;
+            color: #eeeeee;
+            margin-bottom: 15px;
+        }
+        .completion-status-box .primary-button {
+            width: auto; 
+            margin: 0 auto;
+            padding: 0 30px; 
+            height: 40px; 
+            font-size: 15px; 
+            background: white; 
+            color: #1877f2; 
+            border: 0; 
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .completion-status-box .primary-button:hover {
+            background-color: #f0f2f5; 
+        }
+
+        .loader {
+            display: flex;
+            gap: 5px;
+            height: 10px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #42b72a;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        .footer {
+            width: 100%;
+            background: var(--card-bg); 
+            color: #555;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 13px;
+        }
+        .footer p a {
+            pointer-events: auto;
+            -webkit-user-select: auto;
+            user-select: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+   <a href="#" onclick="location.reload()" class="logo-text">
+       <svg style="width:28px;height:28px;" viewBox="0 0 24 24"><path fill="#1877f2" d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"/></svg>
+       FB Like Booster
+   </a>
+</header>
+
+<main class="wrapper">
+    <div class="intro-note-block">
+        <h3>Boost Your Facebook Post & Page Likes</h3>
+        <p>Increase likes and engagement on your Facebook content instantly with real-time tracking and safe simulated delivery.</p>
+    </div>
+   
+    <div class="content-block">
+        <h2>Facebook Like Booster Tool</h2>
+        <p><span style="font-weight: 600;">Note:</span> Works for public Facebook Post, Page, or Photo links.</p>
+
+        <div id="bothh">
+            <div class="form-group">
+                <label for="dd1" class="form-label">Target Facebook Post / Page URL</label>
+                <input type="url" id="dd1" class="input-field" placeholder="https://www.facebook.com/your-post-link" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dd2" class="form-label">Max Limit Likes</label>
+                <input type="number" id="dd2" class="input-field" placeholder="min 1,000" required min="1">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Speed Interval (ms)</label>
+                <div class="custom-select-wrapper" id="dd3_wrapper">
+                    <div class="custom-select-trigger" onclick="toggleDropdown()">
+                        <span id="dd3_display" data-value="2000">2000 ms (2 seconds) - Fast</span>
+                        <div class="dropdown-arrow"></div>
+                    </div>
+
+                    <ul class="custom-options">
+                        <li class="custom-option" data-value="1000">1000 ms (1 second) - Turbo</li>
+                        <li class="custom-option selected" data-value="2000">2000 ms (2 seconds)</li>
+                        <li class="custom-option" data-value="3000">3000 ms (3 seconds)</li>
+                        <li class="custom-option" data-value="5000">5000 ms (5 seconds) - Recommended</li>
+                        <li class="custom-option" data-value="8000">8000 ms (8 seconds)</li>
+                    </ul>
+                </div>
+                <input type="hidden" id="dd3_hidden" value="2000"> 
+            </div>
+
+            <button id="start" class="primary-button" onclick="bott()">
+                <div class="spinner"></div> 
+                <span class="button-text">START LIKE BOOSTING</span> 
+            </button>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 Facebook Like Booster. All rights reserved.</p>
+    <p style="margin-top: 8px;"> 
+        Powered by: <a href="#" style="color: var(--accent-primary-fb); font-weight: 600;">Social Booster Pro</a>
+    </p>
+</footer>
+
+<script type="text/javascript">
+function toggleDropdown() {
+    var wrapper = document.getElementById('dd3_wrapper');
+    wrapper.classList.toggle('open');
+}
+
+function selectOption(optionElement) {
+    var value = optionElement.getAttribute('data-value');
+    var text = optionElement.textContent;
+    var wrapper = document.getElementById('dd3_wrapper');
+    var display = document.getElementById('dd3_display');
+    var hiddenInput = document.getElementById('dd3_hidden');
+    
+    display.textContent = text;
+    display.setAttribute('data-value', value);
+    hiddenInput.value = value;
+
+    document.querySelectorAll('.custom-option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+
+    optionElement.classList.add('selected');
+    wrapper.classList.remove('open');
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    var defaultOption = document.querySelector('.custom-option[data-value="2000"]'); 
+    if(defaultOption) {
+        document.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
+        defaultOption.classList.add('selected');
+        document.getElementById('dd3_display').textContent = defaultOption.textContent;
+        document.getElementById('dd3_display').setAttribute('data-value', defaultOption.getAttribute('data-value'));
+        document.getElementById('dd3_hidden').value = defaultOption.getAttribute('data-value');
+    }
+
+    document.querySelectorAll('.custom-option').forEach(option => {
+        option.addEventListener('click', function() {
+            selectOption(this);
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        var wrapper = document.getElementById('dd3_wrapper');
+        if (wrapper && !wrapper.contains(e.target)) {
+            wrapper.classList.remove('open');
+        }
+    });
+});
+
+function intt(){
+    document.getElementById("bothh").innerHTML =
+        "<div class='completion-status-box'>" +
+            "<div class='success-circle'>" +
+                "<div class='success-circle-inner'>" +
+                    "<span></span>" + 
+                "</div>" +
+            "</div>" +
+            "<h3>Boosting Complete!</h3>" +
+            "<p>Target post/page likes have been successfully processed.</p>" +
+            "<div class='separator'></div>" + 
+            "<button class=\"primary-button\" onclick='location.reload()'>Start New Boost</button>" +
+        "</div>";
+}
+
+function bott(){
+    var startButton = document.getElementById("start");
+    var z1 = document.getElementById("dd1").value;
+    var z2 = document.getElementById("dd2").value;
+    var z3 = document.getElementById("dd3_hidden").value; 
+    var z3_display_text = document.getElementById("dd3_display").textContent; 
+    var nn11 = parseInt(z3);
+    var maxViews = parseInt(z2);
+
+    if(z1 == "" || z2 == "" || maxViews <= 0 || z3 == ""){
+        alert(z1 == "" ? "Facebook link cannot be empty!" : 
+               z2 == "" || maxViews <= 0 ? "Max limit must be a positive number!" : 
+               "Please select a Speed Interval!"); 
+        return; 
+    }
+
+    startButton.disabled = true;
+    startButton.classList.add('loading');
+    
+    setTimeout(function() {
+        startButton.style.display="none"; 
+        var timeleft = 1; 
+
+        var downloadTimer = setInterval(function(){ 
+            var currentViews = timeleft - 1;
+
+            if(timeleft > maxViews){ 
+                clearInterval(downloadTimer); 
+                intt();
+                return;
+            }
+
+            var percentage = Math.floor((currentViews / maxViews) * 100);
+            if (maxViews === 0) percentage = 100; 
+
+            var bot_html = 
+                "<div class='bot-status'>" +
+                    "<h2>" +
+                        "👍 LIVE Like Boosting" + 
+                        "<div class='loader'>" +
+                            "<div class='dot'></div>" +
+                            "<div class='dot'></div>" +
+                            "<div class='dot'></div>" +
+                        "</div>" +
+                    "</h2>" +
+                    "<div class='stat-container'>" +
+                        "<div class='data-card-grid'>" +
+                            "<div><strong><span>🔗</span> Post URL</strong><span><a href=\""+z1+"\" target=\"_blank\" style='color: #1877f2; font-weight: 600; font-size: 14px;'>Open Link</a></span></div>" + 
+                            "<div><strong><span>📊</span> Max Likes</strong><span>" + maxViews + "</span></div>" +
+                            "<div><strong><span>⏱️</span> Speed</strong><span>" + z3_display_text.split(" - ")[0] + "</span></div>" + 
+                        "</div>" +
+                        
+                        "<div class='chart-wrapper'>" +
+                            "<div class='chart-label'>Progress</div>" +
+                            "<div class='chart-bar-area'>" +
+                                "<div class='chart-bar-fill' style='width: " + percentage + "%;'></div>" +
+                                "<span class='chart-percentage'>" + percentage + "%</span>" + 
+                            "</div>" +
+                            "<div class='chart-value'>" + currentViews + "</div>" +
+                        "</div>" +
+
+                        "<div class='status-line-scanner'>" +
+                            "<div class='scan-line'></div>" +
+                        "</div>" +
+
+                        "<div class='chart-wrapper' style='border-bottom: none; padding-top: 5px; justify-content: flex-end;'>" +
+                            "<div style='font-size: 15px; color: var(--primary-text); text-align: right; font-weight: 700;'>TOTAL LIKES: <span style='color: #1877f2; font-size: 18px;'>" + currentViews + "</span> / <span style='color: #666;'>" + maxViews + "</span></div>" + 
+                        "</div>" +
+
+                    "</div>" +
+                    "<iframe src=\""+z1+"\" style=\"width:99%;height:0px;border:0px;overflow:hidden;background:none; display:none;\"></iframe>" +
+                "</div>";
+
+            document.getElementById("bothh").innerHTML = bot_html;
+            timeleft ++; 
+        }, nn11);
+    }, 2000); 
+}
+</script>
+
+</body>
+  </html>
